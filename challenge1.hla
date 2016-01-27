@@ -1,0 +1,31 @@
+/*
+ * Programming challenge 1
+ *
+ * written by			Anthony Bostock
+ * created on			27 January 2016
+ *
+ */
+program challenge1;
+
+#include ("stdlib.hhf");
+static
+	years_at_butte: uns8;
+	your_name: string;
+
+begin challenge1;
+	stdout.put("Hello there.", nl);
+	
+	stdout.put("What is your name? ");
+	stdin.flushInput();
+	stdin.a_gets();
+	mov(eax, your_name);
+	
+	stdout.put("Hello ", your_name, ". How many years have you attended Butte College?", nl);
+	stdin.getu8();
+	mov(al, years_at_butte); 
+	stdout.put("Nice to meet you ", your_name, ".", nl);
+	stdout.put("You have been at Butte College for ", years_at_butte, " years? Awesome!", nl)
+	strfree(your_name);
+	
+end challenge1;
+
