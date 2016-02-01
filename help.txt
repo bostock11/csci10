@@ -1,1 +1,0 @@
-hla -lmelf_i386 -v "program name"`
