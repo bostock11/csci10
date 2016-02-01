@@ -1,0 +1,12 @@
+program FebFirst;
+#include ("stdlib.hhf");
+
+begin FebFirst;
+
+        mov($1A, al);
+        mov(%1010_1010, bl);
+        mov(99, cl);
+
+        stdout.put(cl, nl);
+
+end FebFirst;
