@@ -1,0 +1,31 @@
+/*
+ *
+ * written by	Anthony Bostock		
+ * created on	2.8.16
+ *
+ */
+program challenge2;
+
+// includes
+
+#include ( "stdlib.hhf" );
+static
+	num1: uns8;
+	num2: uns8;
+var
+	char1: char;
+
+begin challenge2;
+forever
+	stdout.put ( "Hello there. Please enter a number 1 - 50.", nl );
+	stdin.getu8();
+	mov(al, num1);
+
+	stdout.put ( "Enter another number 1 - 50.", nl );
+	stdin.getu8();
+	stdout.put ( "Would you like to go again? Enter y or n.", nl );
+	stdin.flushInput();
+	stdin.getc();
+	breakif ( al = 'n' );
+endfor;
+end challenge2;
