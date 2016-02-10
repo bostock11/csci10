@@ -1,0 +1,131 @@
+/* Challenge 3
+ *
+ * written by    Anthony Bostock
+ * created on    2.10.16
+ * 
+ *
+ * This program displays contents 
+ * of registers in both hexadecimal
+ * and decimal formats.
+ *
+ */
+program challenge3;
+
+#include ("stdlib.hhf");
+
+static 
+	c: char;
+	
+
+begin challenge3;
+
+forever
+	stdout.put("enter an 8 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu8();
+	mov(al, dl);
+
+	stdout.put ("enter an 8 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu8();
+	mov(al, cl);
+
+	stdout.put ("enter an 8 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu8();
+	mov(al, bl);
+
+	stdout.put ("enter an 8 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu8();
+
+	
+	stdout.put ("8 bit register:", nl);
+	stdout.put ("Your values in Hexadecimal: ", dl, " ", cl," ", bl, " ", al, nl);
+	stdin.flushInput();
+	stdout.put ("Your values in Decimal: ", (type uns8 dl), " ", (type uns8 cl), " ", (type uns8 bl), " ", (type uns8 al), nl);
+	stdin.flushInput();
+
+	stdout.put ("enter a 16 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu16();
+	mov(ax, dx);
+
+	stdout.put ("enter a 16 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu16();
+	mov(ax, cx);
+
+	stdout.put ("enter a 16 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu16();
+	mov(ax, bx);
+
+	stdout.put ("enter a 16 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu16();
+
+
+	stdout.put ("16 bit register:", nl);
+	stdout.put ("Your values in Hexadecimal: ", dx, " ", cx," ", bx, " ", ax, nl);
+	stdin.flushInput();
+	stdout.put ("Your values in Decimal: ", (type uns16 dx), " ", (type uns16 cx), " ", (type uns16 bx), " ", (type uns16 ax), nl);
+	stdin.flushInput();
+
+	stdout.put ("8 bit register:", nl);
+	stdout.put ("Your values in Hexadecimal: ", dl, " ", cl," ", bl, " ", al, nl);
+	stdin.flushInput();
+	stdout.put ("Your values in Decimal: ", (type uns8 dl), " ", (type uns8 cl), " ", (type uns8 bl), " ", (type uns8 al), nl);
+	stdin.flushInput();
+
+  stdout.put ("enter a 32 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu32();
+	mov(eax, edx);
+
+  stdout.put ("enter a 32 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu32();
+	mov(eax, ecx);
+
+  stdout.put ("enter a 32 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu32();
+	mov(eax, ebx);
+
+  stdout.put ("enter a 32 bit unsigned integer: ");
+	stdin.flushInput();
+	stdin.getu32();
+
+
+	stdout.put ("32 bit register:", nl);
+	stdout.put ("Your values in Hexadecimal: ", edx, " ", ecx," ", ebx, " ", eax, nl);
+	stdin.flushInput();
+	stdout.put ("Your values in Decimal: ", (type uns32 edx), " ", (type uns32 ecx), " ", (type uns32 ebx), " ", (type uns32 eax), nl);
+	stdin.flushInput();
+
+
+	stdout.put ("16 bit register:", nl);
+	stdout.put ("Your values in Hexadecimal: ", dx, " ", cx," ", bx, " ", ax, nl);
+	stdin.flushInput();
+	stdout.put ("Your values in Decimal: ", (type uns16 dx), " ", (type uns16 cx), " ", (type uns16 bx), " ", (type uns16 ax), nl);
+	stdin.flushInput();
+
+
+	stdout.put ("8 bit register:", nl);
+	stdout.put ("Your values in Hexadecimal: ", dl, " ", cl," ", bl, " ", al, nl);
+	stdin.flushInput();
+	stdout.put ("Your values in Decimal: ", (type uns8 dl), " ", (type uns8 cl), " ", (type uns8 bl), " ", (type uns8 al), nl);
+
+	
+ 		stdout.put ("Would you like to go again? y or n", nl);
+	repeat
+	stdin.flushInput();
+		stdin.getc();
+		stdout.put ("Invalid input. Enter y or n.");
+		breakif( al = 'n');
+	until( al = 'y');
+	
+		breakif ( al = 'n');
+endfor;
+end challenge3;
